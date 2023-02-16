@@ -51,7 +51,8 @@ jobs:
 
       - name: Verify
         run: echo ${{ steps.docker_build.outputs.digest }}
-
+      - name: Upload docker-compose to ssh
+        run: rsync -avz ./docker-compose.yml ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu
       - name: SSH deploy
         uses: appleboy/ssh-action@v0.1.7
         with:
