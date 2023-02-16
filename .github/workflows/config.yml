@@ -62,7 +62,7 @@ jobs:
           password: ${{ secrets.SSH_PRIVATE_KEY}}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            docker-compose stop
-            docker-compose rm -f
-            docker-compose pull
-            docker-compose up -d
+            docker compose stop
+            docker compose rm -f
+            docker compose pull
+            docker compose up -d
