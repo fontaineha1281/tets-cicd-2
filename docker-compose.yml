@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  mywebsite:
+    image: fontaine1281/react:latest
+    ports:
+      - "8080:80"
