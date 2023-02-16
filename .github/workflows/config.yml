@@ -31,6 +31,9 @@ jobs:
   docker:
     runs-on: self-hosted
     steps:
+      - name: Change Permision Docker
+        run: sudo chmod 666 /var/run/docker.sock
+        
       - name: Login Docker Hub
         uses: docker/login-action@v1
         with:
