@@ -1,10 +1,16 @@
 pipeline {
     agent any
+    tools {
+        nodejs "NodeJS19"
+    }
     stages {
-        stage('Clone') {
+        stage('Fetach Code') {
             steps {
-                git 'https://github.com/fontaineha1281/tets-cicd-2.git'
+                git branch: 'dev', url: 'https://github.com/fontaineha1281/tets-cicd-2.git'
             }
+        }
+        stage('Build') {
+            sh 'npm run build'
         }
     }
 }
