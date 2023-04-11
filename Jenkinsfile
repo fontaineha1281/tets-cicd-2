@@ -14,6 +14,7 @@ pipeline {
             steps {
                 // Build your React project
                 sh 'npm i'
+                sh 'npm install -g serve'
                 sh 'npm run build'
             }
         }
