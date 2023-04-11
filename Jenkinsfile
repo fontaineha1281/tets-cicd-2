@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build your React project
+                sh 'npm ci'
                 sh 'npm run build'
             }
         }  
