@@ -4,13 +4,18 @@ pipeline {
         nodejs "NodeJS19"
     }
     stages {
-        stage('Fetach Code') {
+        stage('Checkout') {
             steps {
+                // Clone your React project from your repository
                 git branch: 'dev', url: 'https://github.com/fontaineha1281/tets-cicd-2.git'
             }
         }
+        
         stage('Build') {
-            sh 'npm run build'
-        }
+            steps {
+                // Build your React project
+                sh 'npm run build'
+            }
+        }  
     }
 }
